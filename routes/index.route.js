@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-import companies from './companies.route';
-import employees from './employees.route';
+const companies = require('./companies.route');
+const employees = require('./employees.route');
 
 router.use('/companies', companies)
 router.use('/employees', employees)
