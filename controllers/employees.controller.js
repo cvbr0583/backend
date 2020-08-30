@@ -1,6 +1,7 @@
 import models from '../models';
 const db = models.sequelize.models;
 
+/* Employee List API */
 const List = async (req, res) => {
     try {
         const employees = await db.employees.findAll({})
@@ -14,6 +15,7 @@ const List = async (req, res) => {
     }
 }
 
+/* Employee List Based on Company */
 const CompanyWiseEmployees = async (req, res) => {
     try {
         const { companyId } = req.params
@@ -32,6 +34,7 @@ const CompanyWiseEmployees = async (req, res) => {
     }
 }
 
+/* Employee Creation */
 const Create = async (req, res) => {
     try {
         const { name, fatherName, motherName, sex, spouseName, pincode,
@@ -60,6 +63,7 @@ const Create = async (req, res) => {
     }
 }
 
+/* View employee information */
 const Read = async (req, res) => {
     try {
         const { id } = req.params
@@ -78,6 +82,7 @@ const Read = async (req, res) => {
     }
 }
 
+/* Updating employee information */
 const Update = async (req, res) => {
     try {
         const { id } = req.params

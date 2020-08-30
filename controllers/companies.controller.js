@@ -1,6 +1,7 @@
 import models from '../models';
 const db = models.sequelize.models;
 
+/* Company List API */
 const List = async (req, res) => {
     try {
         const companies = await db.companies.findAll({})
@@ -14,6 +15,7 @@ const List = async (req, res) => {
     }
 }
 
+/* Company creation */
 const Create = async (req, res) => {
     try {
         const { name, address } = req.body
@@ -38,6 +40,7 @@ const Create = async (req, res) => {
     }
 }
 
+/* View Single company data */
 const Read = async (req, res) => {
     try {
         const { id } = req.params
@@ -56,6 +59,7 @@ const Read = async (req, res) => {
     }
 }
 
+/* Updating the company information */
 const Update = async (req, res) => {
     try {
         const { id } = req.params
